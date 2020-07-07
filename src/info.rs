@@ -49,4 +49,19 @@ mod tests {
         assert_eq!(parsed.chapterCount, t.chapterCount);
         assert_eq!(parsed.wordCount, t.wordCount);
     }
+
+    #[test]
+    fn parse_info_string() {
+        let t = FictionInfo {
+            ..Default::default()
+        };
+
+        let parsed = FictionInfo::parse_url(String::from("test"));
+
+        assert_eq!(parsed.host, t.host);
+        assert_eq!(parsed.id, t.id);
+        assert_eq!(parsed.name, t.name);
+        assert_eq!(parsed.chapterCount, t.chapterCount);
+        assert_eq!(parsed.wordCount, t.wordCount);
+    }
 }
