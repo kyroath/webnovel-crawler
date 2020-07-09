@@ -45,5 +45,5 @@ pub fn init_console(url: Option<&str>) -> FictionInfo {
         url
     };
 
-    FictionInfo::parse_url(url)
+    FictionInfo::from_url(url)
 }

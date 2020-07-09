@@ -6,7 +6,8 @@ use clap::{crate_authors, crate_description, crate_version, App, Arg};
 mod cli;
 mod info;
 
-fn main() {
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let matches = App::new("Webnovel Crawler")
         .version(crate_version!())
         .author(crate_authors!())
@@ -39,4 +40,6 @@ fn main() {
 
     let url = matches.value_of("URL");
     cli::init_console(url);
+
+    Ok(())
 }
